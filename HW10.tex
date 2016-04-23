@@ -92,7 +92,27 @@ find a dominating set of $G$ of minimum size.
 Design a polynomial-time approximation algorithm for the problem with approximation ratio
 $O(log n)$. In other words, if $OPT$ is the size of the optimal dominating set and $C$ is the size
 of the dominating set found by your algorithm, then it should hold that $C \leq O(log n) \cdot OP T$,
-which is equivalent to $C = O(OPT \cdot log n)$ by the definition of the big-O notation.
+which is equivalent to $C = O(OPT \cdot log n)$ by the definition of the big-O notation.\\
+
+Consider the following approximate algorithm for finding a dominating set, that takes a graph $G$ having a set of $V$ vertices and $E$ edges as an input parameter
+
+\begin{minipage}{\linewidth}
+  \begin{algorithm}[H]
+    \caption{Greedy Dominating Set Approximation Algorithm}\label{DomSetApproxAlg}
+    \begin{algorithmic}[1]
+      \Procedure{Greedy Dominating Set Approximation Algorithm}{$G$}
+        \State Create remaining vertices set $R = V$
+        \State Create an empty set of vertices $S = \phi$
+        \While {$R \neq \phi$}
+          \State Select vertex $v$ from $R$ such that set $S_i$ consisting of vertex $v$    
+          \State and all vertices connected to $v$ by an edge maximizes $S_i \cap R$
+          \State $R = R - S_i$
+          \State $S= S \cup v$
+        \EndWhile
+        \State return $S$
+      \EndProcedure    \end{algorithmic}
+  \end{algorithm}
+\end{minipage}\\
 
 \item In this exercise, we consider a \enquote{dual} problem of the load balancing problem.
 
