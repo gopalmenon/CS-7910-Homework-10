@@ -110,9 +110,38 @@ Consider the following approximate algorithm for finding a dominating set, that 
           \State $S= S \cup v$
         \EndWhile
         \State return $S$
-      \EndProcedure    \end{algorithmic}
+      \EndProcedure
+    \end{algorithmic}
   \end{algorithm}
 \end{minipage}\\
+
+For every element $x \in S_i \cap R$ in algorithm \ref{DomSetApproxAlg}, we can associate a cost $C_x = \frac{1}{S_i \cap R}$. If we add up the cost for every element in set $S_i$ we will get a total of $1$. The size of the dominating set found by this algorithm will be the number of vertices in set $S$. Since the dominating set will cover all vertices either by including them in $S$ or by having an edge to it from a vertex in set $S$, the number of vertices $C$ in the dominating set will be given by
+\begin{align*} 
+C = \sum \limits_{x \in V} C_x
+\end{align*}
+ We need to show that this algorithm will give us a dominating set of size 
+\begin{align*} 
+C \leq O(log n) \cdot OPT 
+\end{align*}
+where $OPT$ is the number of vertices in the optimal dominating set.
+
+We will start by proving the following lemma for any subset of vertices $S_k$
+\begin{align*} 
+\sum \limits_{x \in S_k} C_x \leq H(d_k) 
+\end{align*}
+where $H$ is the harmonic function defined as
+\begin{align} \label{HarmonicFunction}
+H(n) = 1 + \frac{1}{2} + \frac{1}{3}+ \frac{1}{4} + ... + \frac{1}{n} = \theta (log n)
+\end{align}and 
+\begin{align*} 
+d_k = \left | S_k \right | 
+\end{align*}
+
+Let 
+\begin{align*} 
+S_k = \{x_1, x_2, ..., x_{d_k}\} 
+\end{align*}
+be the set $S_k$ with its elements ordered by the time they are first removed from the set of remaining vertices $R$. Consider an element $x_i$ of $S_k$. Suppose  $x_i$ is first removed in an iteration when we remove $S_i$ from $R$. $x_i \in S_i \cap R$ at the beginning of the iteration. And $x_i, x_{i+1}, ..., x_{d_k}$ have not been removed from $R$ yet.
 
 \item In this exercise, we consider a \enquote{dual} problem of the load balancing problem.
 

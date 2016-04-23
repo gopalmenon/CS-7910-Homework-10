@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.12)  23 APR 2016 13:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.12)  23 APR 2016 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1319,7 +1319,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--96
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--116
+Underfull \hbox (badness 10000) in paragraph at lines 99--117
 
  []
 
@@ -1330,13 +1330,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--116
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./HW10.aux) ) 
 Here is how much of TeX's memory you used:
- 23778 strings out of 493304
- 450325 string characters out of 6139870
- 563967 words of memory out of 5000000
- 26715 multiletter control sequences out of 15000+600000
- 83508 words of font info for 103 fonts, out of 8000000 for 9000
+ 23783 strings out of 493304
+ 450378 string characters out of 6139870
+ 564975 words of memory out of 5000000
+ 26716 multiletter control sequences out of 15000+600000
+ 84856 words of font info for 107 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 65i,11n,71p,10416b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,12n,71p,10416b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/sh
 are/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-di
 st/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texlive/texmf-dist/fo
@@ -1345,7 +1345,7 @@ type1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 adobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia
 /putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb
 >
-Output written on HW10.pdf (2 pages, 60841 bytes).
+Output written on HW10.pdf (2 pages, 63960 bytes).
 PDF statistics:
  39 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream
