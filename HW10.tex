@@ -210,9 +210,31 @@ Given an instance of a dual load balancing problem $(m, n, k)$ and a certificate
 Since the dual load balancing problem is both in NP-Hard and NP, we can conclude that it is in NP-Complete.
 
 \item \textbf{(15 points)} Let $A$ be the sum of the processing time of all jobs, i.e., $A = \sum\limits_{i=1}^n t_i$. We assume that $t_i \leq \frac{A}{2m}$ for each job $i$ (intuitively, each $t_i$ is not \enquote{too big}). Under this assumption, design a polynomial-time approximation algorithm for the problem with
-approximation ratio 2. In other words, if $OPT$ is the minimum workload in an optimal
-solution and $C$ is the minimum workload in your solution, then it holds that $C \geq \frac{1}{2} \cdot OPT$.
+approximation ratio 2. In other words, if $OPT$ is the minimum workload in an optimal solution and $C$ is the minimum workload in your solution, then it holds that $C \geq \frac{1}{2} \cdot OPT$.\\
+
+
+Consider the greedy algorithm discussed in class for allocation of jobs to machines. To recap, the algorithm makes one pass through the jobs in any order and each job is picked up and assigned to the machine that has the smallest load so far.
+
+If it is possible to spread the jobs out equally among the machines, each machine will have a load equal to $\frac{A}{m}$. If it is not possible to spread out the jobs evenly among the machines, then it will mean that some machine(s) will have a load $> \frac{A}{m}$ and other machine(s) will have to have a load $< \frac{A}{m}$. This means that the minimum load assigned to a machine will have an upper limit of $\frac{A}{m}$. Or in other words
+\begin{align} \label{OPTLimit}
+OPT \leq \frac{A}{m}
+\end{align}
+We know that the size of the largest job is limited by $\frac{A}{2m}$. The largest job can either be the only job assigned to a machine or it could be one of more than one job assigned to a machine. In both cases the minimum load assigned to a machine will be at least the largest job size. So
+\begin{align*}
+C \geq \frac{A}{2m}
+\end{align*}
+\begin{align} \label{AlgLimit}
+C \geq \frac{1}{2} \cdot \frac{A}{m}
+\end{align}
+
+From \ref{OPTLimit} and \ref{AlgLimit}, we can conclude that
+\begin{align} \label{AlgLimitProof}
+C \geq \frac{1}{2} \cdot OPT
+\end{align}
+\ref{AlgLimitProof} proves that the greedy algorithm has an approximation ratio of 2.
+
 \end{enumerate}
+
 \end{enumerate}
 
 %----------------------------------------------------------------------------------------
