@@ -189,9 +189,26 @@ workload of all machines.
 \textbf{Remark.} Recall that the load balancing problem is to find a job assignment that minimizes
 the maximum workload of all machines. Therefore, the two problem are \enquote{dual} to each other.
 \begin{enumerate}
-\item \textbf{(5 points)} The dual load balancing problem defined above is an optimization problem.
-What is the decision version of this problem?
+\item \textbf{(5 points)} The dual load balancing problem defined above is an optimization problem. What is the decision version of this problem?
+
+The decision version of the problem is that given $m$ machines and $n$ jobs as described above, is it possible to find an assignment of jobs to machines such that the minimum workload is at least $k$.
+
 \item \textbf{(10 points)} Prove that the decision problem is NP-Complete.
+
+We know that the partition problem is in NP-Complete. As a recap, the partition problem is, given a set $A=\{a_1, a_2,...,a_p\}$, to determine if it is possible to partition $A$ into two subsets $A_1$ and $A_2$ ($A=A_1 \cup A_2$ and $A_1 \cap A_2 = \phi$) such that $\sum A_1 = \sum A_2$. If we can reduce the partition problem to our dual load balancing problem in polynomial time, then we can show that our problem is in NP-Hard. Let $(A)$ be an instance of the partition problem, where $A$ is a set of items as described above and let (m, n, k) be an instance of the dual load balancing problem, where $m$, $n$ and $k$ are as described in (a) above. Consider a special case of the dual load balancing problem where $m=2$, $n=A$ and $k = \frac{1}{2} \sum A = \frac{1}{2} \sum t_i$.
+\begin{enumerate}
+\item We can see that it is possible to reduce the instance of the partition problem to our special instance of the dual load balancing problem in polynomial time.
+
+\item Consider the case where it is possible to partition the set $A$. In this case, we know that it will be possible to have a minimum workload of $k$. Consider the case where it is possible to have a minimum workload of $k$. The way the problem has been constructed, the workload of each machine will be $k$ and this means that the instance of the partition problem will be true. 
+
+\end{enumerate}
+
+From (i) and (ii) above we can conclude that the dual load balancing problem is in NP-Hard since it can be reduced in polynomial time from a known NP-Complete problem.
+
+Given an instance of a dual load balancing problem $(m, n, k)$ and a certificate (an assignment list of jobs to each machine $m$), we can verify in polynomial time that the certificate is correct. So the dual load balancing problem is in NP.
+
+Since the dual load balancing problem is both in NP-Hard and NP, we can conclude that it is in NP-Complete.
+
 \item \textbf{(15 points)} Let $A$ be the sum of the processing time of all jobs, i.e., $A = \sum\limits_{i=1}^n t_i$. We assume that $t_i \leq \frac{A}{2m}$ for each job $i$ (intuitively, each $t_i$ is not \enquote{too big}). Under this assumption, design a polynomial-time approximation algorithm for the problem with
 approximation ratio 2. In other words, if $OPT$ is the minimum workload in an optimal
 solution and $C$ is the minimum workload in your solution, then it holds that $C \geq \frac{1}{2} \cdot OPT$.
